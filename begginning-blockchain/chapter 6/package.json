@@ -1,0 +1,14 @@
+{
+  "name": "chapter-6",
+  "version": "1.0.0",
+  "main": "ethereum.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "truffle": "^5.1.66"
+  }
+}
