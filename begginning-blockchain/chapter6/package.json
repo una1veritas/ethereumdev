@@ -7,8 +7,9 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "truffle": "^5.1.66"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
