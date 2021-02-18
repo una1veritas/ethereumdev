@@ -1,0 +1,26 @@
+{
+  "name": "meti-hackathon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.2.2",
+    "babel-polyfill": "^6.26.0",
+    "truffle": "^5.1.66",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.2.9"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "description": ""
+}
