@@ -9,14 +9,14 @@ var web3 = new Web3(new Web3.providers.HttpProvider(RPC_PATH));
 
 // creates account on the local ethereum geth node using web3.personal module
 var createAccount = function () {
-    // replace "abcd" with the password of your choice
-    web3.eth.personal.newAccount('abcd').then(console.log);
-};
+//    // replace "abcd" with the password of your choice
+//    web3.eth.personal.newAccount('abcd').then(console.log);
+//};
 
 // unlocks an account on the local ethereum geth node using web3.personal module
 var unlockAccount = function () {
     // use your own account address and password
-    web3.eth.personal.unlockAccount('0xbaf735f889d603f0ec6b1030c91d9033e60525c3', 'abcd').then(console.log);
+    web3.eth.personal.unlockAccount('0x695b1b4c41313F7dFdAA9276CE4aa11f8417C65B').then(console.log);
 }
 
 // deploys the smart contract for polling dApp as described in chapter 6
