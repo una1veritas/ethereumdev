@@ -6,13 +6,15 @@ contract Vote{
     mapping(address => int) voterLog;
     
     //array of candidate strings
-    bytes32[] public candidates;
+    bytes32 [] public candidates;
     
     //maps each candidate name to an integer holding their votes
     mapping (bytes32 => uint) votes;
         
     //Constructor takes in an array of candidates
-    function Vote(bytes32[] args, address[] addresses){
+    constructor(bytes32[] memory args, address[] memory addresses) public {
+	require(addresses.length > 0 && addresses.length <= 16);
+	require(candidates.length < 8);
         for(uint i = 0; i < addresses.length; i++){
             voterLog[addresses[i]] = -1;
         }
@@ -22,17 +24,17 @@ contract Vote{
     /* --- PUBLIC FUNCTIONS --- */
     
     //returns the number of candidates
-    function getNumCandidates() public returns (uint256) {
+    function getNumCandidates() public view returns (uint256) {
         return candidates.length;
     }    
     
     //returns the name of the nth candidate
-    function getCandidate(uint8 n) public returns (bytes32){
+    function getCandidate(uint8 n) public view returns (bytes32){
         return candidates[n];
     }
     
     //returns the number of votes this candidate has recieved
-    function getVotesForCandidate(bytes32 name) public returns (uint){
+    function getVotesForCandidate(bytes32 name) public view returns (uint){
         return votes[name];
     }
     
@@ -48,7 +50,7 @@ contract Vote{
     }
     
     //returns true if the address is eligible to cast a vote
-    function eligible() public returns (bool){
+    function eligible() public view returns (bool){
         if(voterLog[msg.sender] == -1){
             return true;
         }
@@ -56,7 +58,7 @@ contract Vote{
     }
     
     //returns true if the voter address is valid (regardless of if they have already voted)
-    function validVoter() public returns(bool){
+    function validVoter() public view returns(bool){
         if(voterLog[msg.sender] == 0){
             return false;
         }
@@ -64,7 +66,7 @@ contract Vote{
     }
     
     //returns the address of the caller
-    function caller() public returns (address){
+    function caller() public view returns (address){
         return msg.sender;
     }   
 }
