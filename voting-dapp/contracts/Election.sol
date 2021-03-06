@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity 0.5.16;
 
 contract Election {
     // Constructor
@@ -18,7 +18,7 @@ contract Election {
     uint public candidatesCount;
 
 
-    function addCandidate(string _name, string _party) public {
+    function addCandidate(string memory _name, string memory _party) public {
         require(voteTotal == 0, "Cannot submit candidate after first vote recorded");
 
         candidatesCount++;

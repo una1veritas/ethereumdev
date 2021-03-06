@@ -112,29 +112,34 @@ App = {
     });
   },
 
-  handleAddVote: function(event) {
-    event.preventDefault();
-    var voteInstance;
-    var voteValue = parseInt($(event.target).data('vote'));
-    var proposalInt = parseInt($(event.target).data('proposal'));
-    web3.eth.getAccounts(function(error, accounts) {
-      if (error) {
-        console.log(error);
-      }
-      var account = accounts[0];
-      App.contracts.Voting.deployed().then(function(instance) {
-        voteInstance = instance;
-        return voteInstance.vote(proposalInt, voteValue, {from: account});
-      }).then(function(result) {
-        var event = voteInstance.CreatedVoteEvent();
-        App.handleEvent(event);
-      }).catch(function(err) {
-        console.log(err.message);
-        $('button').button('reset');
-      });
-    });
-  },
-
+    handleAddVote: function(event) {
+	event.preventDefault();
+	var voteInstance;
+	var voteValue = parseInt($(event.target).data('vote'));
+	var proposalInt = parseInt($(event.target).data('proposal'));
+	web3.eth.getAccounts(function(error, accounts) {
+	    if (error) {
+		console.log('getAccounts');
+		console.log(error);
+	    }
+	    var account = accounts[0];
+	    console.log(accounts.length);
+	    App.contracts.Voting.deployed().then(function(instance) {
+		console.log('instance');
+		voteInstance = instance;
+		return voteInstance.vote(proposalInt, voteValue, {from: account});
+	    }).then(function(result) {
+		console.log('result');
+		var event = voteInstance.CreatedVoteEvent();
+		App.handleEvent(event);
+	    }).catch(function(err) {
+		console.log('err');
+		console.log(err.message);
+		$('button').button('reset');
+	    });
+	});
+    },
+    
   handleEvent: function(event) {
     console.log('Waiting for a event...');
     event.watch(function(error, result) {
