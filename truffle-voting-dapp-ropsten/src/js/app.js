@@ -118,6 +118,7 @@ App = {
 	var voteValue = parseInt($(event.target).data('vote'));
 	var proposalInt = parseInt($(event.target).data('proposal'));
 	web3.eth.getAccounts(function(error, accounts) {
+	    console.log(accounts)
 	    if (error) {
 		console.log('getAccounts');
 		console.log(error);
