@@ -187,6 +187,7 @@ var contract = (function(module) {
             };
 
             args.push(tx_params, callback);
+            console.log(self, args);
             fn.apply(self, args);
           });
         });
