@@ -2,7 +2,7 @@ let Election = artifacts.require('./Election.sol');
 
 contract('Election', (accounts) => {
   let electionInstance;
-
+  //console.log(accounts);
   it('creates candidates via submission and makes sure at least 2 beforea accept votes', function () {
     let instance;
     return Election.deployed()
@@ -15,8 +15,9 @@ contract('Election', (accounts) => {
       }))
       .catch((err) => {
         assert.include(err.message, 'Must be at least 2 candidates before votes can be cast');
+        console.log('debug message here! ', instance.candidatesCount);
         return instance.addCandidate('Candidate 2', 'republican')
-          .then(() => instance.candidates())
+          .then(() => instance.candidates(0))
           .then(count => assert.equal(count, 2))
       });
 
