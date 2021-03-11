@@ -2,7 +2,7 @@ var HDWalletProvider = require("truffle-hdwallet-provider");
 
 var infura_apikey = "you need to register in Infura for an Access Token.";
 var mnemonic = "< twelve words you can find in metamask/settings/reveal seed words >";
-var address = "0xBd4c4A6000932B6953cf2B9b3f38A706FbA34498"
+var address = "0xE5B34da9497b6fA51726f83d1E39599D88FE64bb"
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
