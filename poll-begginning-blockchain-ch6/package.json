@@ -1,0 +1,15 @@
+{
+  "name": "bgb-chap6-dap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "voting",
+    "dap"
+  ],
+  "author": "",
+  "license": "ISC"
+}
