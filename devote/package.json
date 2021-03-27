@@ -1,7 +1,7 @@
 {
   "name": "devote",
   "version": "0.0.1",
-  "description": "",
+  "description": "*Best First-Time Hack at the 2017 Hack Princeton hackathon.*",
   "main": "truffle.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.6.1"
   },
   "dependencies": {
     "bip39": "^2.4.0",

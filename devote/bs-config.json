@@ -1,5 +1,4 @@
 {
-  "server": {
-    "baseDir": ["./src", "./build/contracts"]
-  }
+    "server": ["./src", "./build/contracts"],
+    "browser": ["Google Chrome"]
 }
