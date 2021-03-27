@@ -1,4 +1,0 @@
-{
-    "server": ["./src", "./build/contracts"],
-    "browser": ["Google Chrome"]
-}
