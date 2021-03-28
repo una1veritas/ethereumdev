@@ -3,5 +3,7 @@ module.exports = {
     files: ['.src/**/*.{html,htm,css,js}'],
     server:{
         baseDir: ["./src", "./build/contracts"]
-    }
+    },
+    browser: ["chrome"],
+    open: false 
 };

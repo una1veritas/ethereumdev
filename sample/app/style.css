@@ -1,6 +1,0 @@
-h1 { margin: 0; }
-.item { letter-spacing: -1em; }
-.item * { letter-spacing: 0; display: inline-block; }
-.title { display: inline-block; width: 4rem; }
-.item input { width: 8rem; box-sizing: border-box; }
-#calc { width: 12rem; }
