@@ -1,5 +1,5 @@
 const HelloContract = artifacts.require('Hello.sol');
 
 module.exports = function(_deployer) {
-    deployer.deploy(HelloContract, 'Hello');
+  _deployer.deploy(HelloContract, 'Hello');
 };
