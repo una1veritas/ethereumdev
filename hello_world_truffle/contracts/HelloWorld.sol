@@ -25,37 +25,40 @@ contract HelloWorld {
     return result;
   }
 
-  function add(string memory _pred, string memory _succ) public pure returns (string memory) {
-    bytes memory pred = bytes(_pred);
-    bytes memory succ = bytes(_succ);
-    uint reslen = pred.length;
-    if (reslen < succ.length) {
-      reslen = succ.length;
+  function add(string memory _p, string memory _s) public pure returns (string memory) {
+    bytes memory p = bytes(_p);
+    bytes memory s = bytes(_s);
+    uint rlen = p.length;
+    if (rlen < s.length) {
+      rlen = s.length;
     }
-    reslen += 1;
-    bytes memory res = new bytes(reslen);
+    bytes memory r = new bytes(rlen);
     uint8 carry = 0;
-    uint i = 0;
-    for(i = 0; i < reslen - 1; i++) {
-      if (pred.length < i) {
-        res[reslen - i - 1] = byte(uint8(succ[succ.length - i - 1]) + carry);
-        carry = 0;
-      } else if (succ.length < i) {
-        res[reslen - i - 1] = byte(uint8(pred[pred.length - i - 1]) + carry);
-        carry = 0;
-      } else {
-        carry = uint8(succ[succ.length - i - 1]) + uint8(pred[pred.length - i - 1]) + carry - 96;
-        if (carry >= 10) {
-          res[reslen - i - 1] = byte((carry % 10) + 48);
-          carry = 1;
-        } else {
-          res[reslen - i - 1] = byte(carry + 48);
-          carry = 0;
-        }
+    uint i;
+    for(i = 0; i < rlen; i++) {
+      uint8 d = carry;
+      if (p.length > i) {
+        d += uint8(p[p.length - i - 1]) - 48;
       }
+      if (s.length > i) {
+        d += uint8(s[s.length - i - 1]) - 48;
+      }
+      if (d >= 10) {
+        carry = 1;
+        d -= 10;
+      } else {
+        carry = 0;
+      }
+      r[rlen - i - 1] = byte(d + 48);
     }
-    res[reslen - i - 1] = byte(carry + 48);
-    
-    return string(res);
+    if (carry != 0) {
+      bytes memory cr = new bytes(rlen+1);
+      cr[0] = byte("1");
+      for(i = 0; i < rlen; i++) {
+        cr[i+1] = r[i];
+      }
+      return string(cr);
+    } 
+    return string(r);
   }
 }
