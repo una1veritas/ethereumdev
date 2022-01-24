@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register User</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 class="text-center">Register User</h1>
+    <hr/>  
+    <div class="container">
+      <div class="row">
+        <div class='col-lg-3'>
+          <a href="index.html">ID List</a>
+        </div>
+        <div class='col-lg-3'>
+          <a href="register.html">Register User</a>
+        </div>
+        <div class='col-lg-3'>
+          <a href="delete.html">Delete User</a>
+        </div>
+        <div class='col-lg-3'>
+          <a href="search.html">Search User</a>
+        </div>
+      </div>
+      <div class='row'>
+        <div class="col-xs-6">
+          <div id="register">
+            <form>
+              <th>Student ID</th>
+              <br>
+              <td><input type="text" id='student_id'></td>
+              <br>
+              <th>ID</th>
+              <br>
+              <td><input type="text" id='rfid'></td>
+              <br>
+              <div id="rooms">
+                <th>Rooms</th>
+                <br>
+                <td>
+                  <div>
+                    <input type="checkbox" id="rfid" name="room_101" value="">
+                    <label for="Room 101">Room 101</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="rfid" name="room_102" value="">
+                    <label for="Room 102">Room 102</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="rfid" name="room_103" value="">
+                    <label for="Room 103">Room 103</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="rfid" name="room_201" value="">
+                    <label for="Room 201">Room 201</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="rfid" name="room_202" value="">
+                    <label for="Room 202">Room 202</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="rfid" name="room_203" value="">
+                    <label for="Room 203">Room 203</label>
+                  </div>
+                </td>
+              </div>
+              <br>
+              <button onclick="return false;" class="btn btn-primary" id="register-button">Register</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div id="registerAll">
+            <form>
+              <br>
+              <th>Register from CSV</th>
+              <br>
+              <br>
+              <input type="file" id='csv_file'>
+              <br>
+              <button onclick="return false;" class="btn btn-primary" id="register-csv">Register-All</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class="col-lg-12">
+          <hr/>
+          <p id="accountAddress" class="text-center"></p>
+        </div>
+      </div>
+    </div>
+    <br/>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>

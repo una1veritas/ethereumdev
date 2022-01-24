@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "configure": "0.0.1",
+    "ipfs": "^0.59.1",
+    "ipfs-http-client": "^53.0.1",
+    "js-ipfs": "0.0.301",
+    "js-ipfs-fetch": "^3.3.0"
+  }
+}
